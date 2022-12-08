@@ -55,6 +55,14 @@ Para instalar esse repositorio bastar escrever em seu terminal:
 
 # Guia
 
+# Sobre o git attributes
+
+* text=auto fará com que o GIT use o seu padrão para arquivos texto e converterá arquivos CRLF para LF no checkin, por exemplo. Dessa maneira o repositório ficará com um único padrão, mesmo que diferentes sistemas operacionais sejam usados.
+
+*.sh text eol=lf fará com que os arquivos .sh sejam excluídos do comportamento acima, mantendo-se como LF. Isso é especialmente útil quando se tem arquivos .sh em um computador Windows usados em containers Linux.
+
+# Criação
+
 O guia mostra o passo a passo de como feito o site e quais comandos foram utilizados.
 
 <i>Feito como forma de lembrar e relembrar</i>

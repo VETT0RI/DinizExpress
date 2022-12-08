@@ -1,15 +1,18 @@
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
+import React from 'react';
+import { BrowserRouter as Router, Route, Link, BrowserRouter } from 'react-router-dom'
+import Company from './pages/Company';
+import Service from './pages/Service';
 
-function App() {
+export interface IApplicationProps{}
+
+const App: React.FunctionComponent<IApplicationProps> = (props) =>{
  return (
-  <Router>
-    <ul>
-      <li><Link to="/">Home</Link></li>
-      <li><Link to="/company">Empresa</Link></li>
-      <li><Link to="/services">Serviços</Link></li>
-      <li><Link to="/contact">Contato</Link></li>
-    </ul>
-  </Router>
+  <BrowserRouter>
+      <Router>
+      <Route path='/' element={<Company/>}/>
+      <Route path='Service' element={<Service/>}/>
+    </Router>
+  </BrowserRouter>
  )
 }
 
