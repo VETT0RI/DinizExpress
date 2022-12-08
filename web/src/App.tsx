@@ -1,26 +1,27 @@
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
-import Home from './pages/Home'
-import Contact from './pages/Contact'
+import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Header from './components/Header';
+import CompanyPage from './pages/Company';
+import ContactPage from './pages/Contact';
+import CoveragePage from './pages/Coverage';
+import HomePage from './pages/Home';
+import ServicesPage from './pages/Services';
 
-function App() {
- return (
-  <Router>
-    <ul className='text-xl text-white font-bold flex'>
-      <li className='cursor-pointer pl-10 pt-4'><Link to="/">Home</Link></li>
-      <li className='cursor-pointer pl-10 pt-4'><Link to="/company">Empresa</Link></li>
-      <li className='cursor-pointer pl-10 pt-4'><Link to="/services">Serviços</Link></li>
-      <li className='cursor-pointer pl-10 pt-4'><Link to="/contact">Contato</Link></li>
-    </ul>
-    <Switch>
-      <Route path='/'>
-        <Home />
-      </Route>
-      <Route path='/contact'>
-        <Contact />
-      </Route>
-    </Switch>
-  </Router>
- )
-}
+export interface IAppProps {}
 
-export default App
+const App: React.FunctionComponent<IAppProps> = (props) => {
+  return (
+    <BrowserRouter>
+      <Header />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/company" element={<CompanyPage />} />
+        <Route path="/services" element={<ServicesPage />} />
+        <Route path="/coverage" element={<CoveragePage />} />
+        <Route path="/contact" element={<ContactPage />} />
+      </Routes>
+    </BrowserRouter>
+  );
+};
+
+export default App;
