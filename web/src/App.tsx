@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Footer from './components/Footer';
 import Header from './components/Header';
 import CompanyPage from './pages/Company';
 import ContactPage from './pages/Contact';
@@ -20,6 +21,7 @@ const App: React.FunctionComponent<IAppProps> = (props) => {
         <Route path="/coverage" element={<CoveragePage />} />
         <Route path="/contact" element={<ContactPage />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 };
